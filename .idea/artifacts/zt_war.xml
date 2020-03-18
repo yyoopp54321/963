@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="zt:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>zt</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="zt-0.0.1-SNAPSHOT.war">
+      <element id="artifact" artifact-name="zt:war exploded" />
+    </root>
+  </artifact>
+</component>

@@ -1,5 +1,6 @@
 package com.example.zt.pojo;
 
+import java.math.BigDecimal;
 import java.util.Date;
 import javax.persistence.*;
 
@@ -9,11 +10,17 @@ public class Book {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    /**
+     * 书名
+     */
     @Column(name = "b_name")
     private String bName;
 
     private String author;
 
+    /**
+     * 类别编号
+     */
     @Column(name = "cate_id")
     private Integer cateId;
 
@@ -21,16 +28,24 @@ public class Book {
     private String bImg;
 
     @Column(name = "b_price")
-    private Double bPrice;
+    private BigDecimal bPrice;
 
-    @Column(name = "book_content")
-    private String bookContent;
+    /**
+     * 内容
+     */
+    @Column(name = "b_content")
+    private String bContent;
 
-    @Column(name = "g_brief")
-    private String gBrief;
+    /**
+     * 简要
+     */
+    @Column(name = "b_brief")
+    private String bBrief;
 
-    @Column(name = "g_state")
-    private Short gState;
+    /**
+     * 评论
+     */
+    private Integer comments;
 
     @Column(name = "create_time")
     private Date createTime;
@@ -53,14 +68,18 @@ public class Book {
     }
 
     /**
-     * @return b_name
+     * 获取书名
+     *
+     * @return b_name - 书名
      */
     public String getbName() {
         return bName;
     }
 
     /**
-     * @param bName
+     * 设置书名
+     *
+     * @param bName 书名
      */
     public void setbName(String bName) {
         this.bName = bName == null ? null : bName.trim();
@@ -81,14 +100,18 @@ public class Book {
     }
 
     /**
-     * @return cate_id
+     * 获取类别编号
+     *
+     * @return cate_id - 类别编号
      */
     public Integer getCateId() {
         return cateId;
     }
 
     /**
-     * @param cateId
+     * 设置类别编号
+     *
+     * @param cateId 类别编号
      */
     public void setCateId(Integer cateId) {
         this.cateId = cateId;
@@ -111,57 +134,69 @@ public class Book {
     /**
      * @return b_price
      */
-    public Double getbPrice() {
+    public BigDecimal getbPrice() {
         return bPrice;
     }
 
     /**
      * @param bPrice
      */
-    public void setbPrice(Double bPrice) {
+    public void setbPrice(BigDecimal bPrice) {
         this.bPrice = bPrice;
     }
 
     /**
-     * @return book_content
+     * 获取内容
+     *
+     * @return b_content - 内容
      */
-    public String getBookContent() {
-        return bookContent;
+    public String getbContent() {
+        return bContent;
     }
 
     /**
-     * @param bookContent
+     * 设置内容
+     *
+     * @param bContent 内容
      */
-    public void setBookContent(String bookContent) {
-        this.bookContent = bookContent == null ? null : bookContent.trim();
+    public void setbContent(String bContent) {
+        this.bContent = bContent == null ? null : bContent.trim();
     }
 
     /**
-     * @return g_brief
+     * 获取简要
+     *
+     * @return b_brief - 简要
      */
-    public String getgBrief() {
-        return gBrief;
+    public String getbBrief() {
+        return bBrief;
     }
 
     /**
-     * @param gBrief
+     * 设置简要
+     *
+     * @param bBrief 简要
      */
-    public void setgBrief(String gBrief) {
-        this.gBrief = gBrief == null ? null : gBrief.trim();
+    public void setbBrief(String bBrief) {
+        this.bBrief = bBrief == null ? null : bBrief.trim();
     }
 
     /**
-     * @return g_state
+     * 获取评论
+     *
+     * @return comments - 评论
      */
-    public Short getgState() {
-        return gState;
+    public Integer getComments() {
+        return comments;
     }
 
     /**
-     * @param gState
+     * 设置评论
+     *
+     * @param comments 评论
      */
-    public void setgState(Short gState) {
-        this.gState = gState;
+    public void setComments(Integer comments) {
+        this.comments = comments;
     }
 
     /**

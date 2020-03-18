@@ -9,14 +9,19 @@ public class Comment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    /**
+     * 用户id
+     */
+    @Column(name = "user_id")
+    private Integer userId;
+
+    @Column(name = "book_id")
+    private Integer bookId;
+
     @Column(name = "comment_content")
     private String commentContent;
 
-    @Column(name = "write_id")
-    private Integer writeId;
-
-    @Column(name = "receive_id")
-    private Integer receiveId;
+    private Integer comments;
 
     @Column(name = "create_time")
     private Date createTime;
@@ -39,6 +44,38 @@ public class Comment {
     }
 
     /**
+     * 获取用户id
+     *
+     * @return user_id - 用户id
+     */
+    public Integer getUserId() {
+        return userId;
+    }
+
+    /**
+     * 设置用户id
+     *
+     * @param userId 用户id
+     */
+    public void setUserId(Integer userId) {
+        this.userId = userId;
+    }
+
+    /**
+     * @return book_id
+     */
+    public Integer getBookId() {
+        return bookId;
+    }
+
+    /**
+     * @param bookId
+     */
+    public void setBookId(Integer bookId) {
+        this.bookId = bookId;
+    }
+
+    /**
      * @return comment_content
      */
     public String getCommentContent() {
@@ -53,31 +90,17 @@ public class Comment {
     }
 
     /**
-     * @return write_id
+     * @return comments
      */
-    public Integer getWriteId() {
-        return writeId;
+    public Integer getComments() {
+        return comments;
     }
 
     /**
-     * @param writeId
+     * @param comments
      */
-    public void setWriteId(Integer writeId) {
-        this.writeId = writeId;
-    }
-
-    /**
-     * @return receive_id
-     */
-    public Integer getReceiveId() {
-        return receiveId;
-    }
-
-    /**
-     * @param receiveId
-     */
-    public void setReceiveId(Integer receiveId) {
-        this.receiveId = receiveId;
+    public void setComments(Integer comments) {
+        this.comments = comments;
     }
 
     /**

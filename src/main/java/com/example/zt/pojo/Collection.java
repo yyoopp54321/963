@@ -1,5 +1,6 @@
 package com.example.zt.pojo;
 
+import java.math.BigDecimal;
 import java.util.Date;
 import javax.persistence.*;
 
@@ -22,7 +23,7 @@ public class Collection {
     private String bImg;
 
     @Column(name = "b_price")
-    private Double bPrice;
+    private BigDecimal bPrice;
 
     @Column(name = "create_time")
     private Date createTime;
@@ -103,14 +104,14 @@ public class Collection {
     /**
      * @return b_price
      */
-    public Double getbPrice() {
+    public BigDecimal getbPrice() {
         return bPrice;
     }
 
     /**
      * @param bPrice
      */
-    public void setbPrice(Double bPrice) {
+    public void setbPrice(BigDecimal bPrice) {
         this.bPrice = bPrice;
     }
 

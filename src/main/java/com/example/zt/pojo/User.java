@@ -9,7 +9,8 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    private String username;
+    @Column(name = "user_name")
+    private String userName;
 
     private String password;
 
@@ -19,21 +20,21 @@ public class User {
     @Column(name = "nick_name")
     private String nickName;
 
-    private Short sex;
+    private Integer sex;
 
+    /**
+     * 0:客户，1：管理员
+     */
     @Column(name = "is_admin")
-    private Short isAdmin;
-
-    private Integer tel;
-
-    @Column(name = "last_money")
-    private Double lastMoney;
+    private Integer isAdmin;
 
     @Column(name = "create_time")
     private Date createTime;
 
     @Column(name = "update_time")
     private Date updateTime;
+
+    private String token;
 
     /**
      * @return id
@@ -50,17 +51,17 @@ public class User {
     }
 
     /**
-     * @return username
+     * @return user_name
      */
-    public String getUsername() {
-        return username;
+    public String getUserName() {
+        return userName;
     }
 
     /**
-     * @param username
+     * @param userName
      */
-    public void setUsername(String username) {
-        this.username = username == null ? null : username.trim();
+    public void setUserName(String userName) {
+        this.userName = userName == null ? null : userName.trim();
     }
 
     /**
@@ -108,57 +109,33 @@ public class User {
     /**
      * @return sex
      */
-    public Short getSex() {
+    public Integer getSex() {
         return sex;
     }
 
     /**
      * @param sex
      */
-    public void setSex(Short sex) {
+    public void setSex(Integer sex) {
         this.sex = sex;
     }
 
     /**
-     * @return is_admin
+     * 获取0:客户，1：管理员
+     *
+     * @return is_admin - 0:客户，1：管理员
      */
-    public Short getIsAdmin() {
+    public Integer getIsAdmin() {
         return isAdmin;
     }
 
     /**
-     * @param isAdmin
+     * 设置0:客户，1：管理员
+     *
+     * @param isAdmin 0:客户，1：管理员
      */
-    public void setIsAdmin(Short isAdmin) {
+    public void setIsAdmin(Integer isAdmin) {
         this.isAdmin = isAdmin;
-    }
-
-    /**
-     * @return tel
-     */
-    public Integer getTel() {
-        return tel;
-    }
-
-    /**
-     * @param tel
-     */
-    public void setTel(Integer tel) {
-        this.tel = tel;
-    }
-
-    /**
-     * @return last_money
-     */
-    public Double getLastMoney() {
-        return lastMoney;
-    }
-
-    /**
-     * @param lastMoney
-     */
-    public void setLastMoney(Double lastMoney) {
-        this.lastMoney = lastMoney;
     }
 
     /**
@@ -187,5 +164,19 @@ public class User {
      */
     public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
+    }
+
+    /**
+     * @return token
+     */
+    public String getToken() {
+        return token;
+    }
+
+    /**
+     * @param token
+     */
+    public void setToken(String token) {
+        this.token = token == null ? null : token.trim();
     }
 }
